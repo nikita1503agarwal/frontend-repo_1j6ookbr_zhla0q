@@ -1,26 +1,33 @@
-import { useState } from 'react'
+import React from 'react'
+import HeroSection from './components/HeroSection'
+import ChatInterface from './components/ChatInterface'
+import FeaturesGrid from './components/FeaturesGrid'
+import DriverDashboard from './components/DriverDashboard'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen w-full bg-slate-50 text-slate-900">
+      {/* Hero with Spline animation */}
+      <HeroSection />
+
+      {/* Content sections */}
+      <main className="space-y-12 md:space-y-16 -mt-8 relative z-10">
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">What Nexus Can Do</h2>
+            <p className="mt-2 text-slate-600">A campus logistics assistant that understands your intent and coordinates actions instantly.</p>
+          </div>
+          <FeaturesGrid />
+        </section>
+
+        <ChatInterface />
+
+        <DriverDashboard />
+
+        <footer className="py-10 text-center text-sm text-slate-600">
+          Built for the Nexus AI campus logistics concept. Demo only — no real services are contacted.
+        </footer>
+      </main>
     </div>
   )
 }
